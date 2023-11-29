@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MONGO DB Hands-On ONE</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Mongo DB -Hands-On FIRST</h1>
+    <table border="2" cell>
+      <thead>
+        <tr>
+          <th>SNO</th>
+          <th>Question</th>
+          <th>Command</th>
+          <th>Description</th>
+          <th>Output</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+            <td>Q.1</td>
+            <td>Query the collection "employee" and list all the documents</td>
+            <td>db.Employee.find()</td>
+            <td>Total 13 Documents (datas) in the list </td>
+            <td><img src="./Question1.png" alt="OuputIMage"></td>
+        </tr>
+
+        <tr>
+            <td>Q.2</td>
+           <td>Query the collection "employee" and list the employees who are having salary more than 30000</td>
+           <td>db.Employee.find({"salary" :{$gt : "30000"}})</td>
+           <td>Total 6 Documents (datas) in the list </td>
+            <td><img src="./Question2.png" alt="OuputIMage"></td>
+        </tr>
+
+        <tr>
+            <td>Q.3</td>
+           <td>Query the collection "employee" and list the employees who are having experience more than 2 years.</td>
+           <td>db.Employee.find({"overallExp" :{$gt : "2"}})</td>
+           <td>There is no  employee, who has having more than 2 years of Experience </td>
+            <td>N/A</td>
+        </tr>
+
+        <tr>
+            <td>Q.4</td>
+           <td>Query the collection "employee" and list the employees who are graduated after 2015 and having experience more than 1 year </td>
+
+         <td>db.Employee.find({"yearGrad" :{$gt:"2015"}, "overallExp" : {$gt : "1"}})</td>
+           <td>There is Four  employees, who has having more than 1 years of Experience and graduated after 2015. </td>
+           <td><img src="./Question4.png" alt="OuputIMage"></td>
+        </tr>
+
+        <tr>
+            <td>Q.5</td>
+           <td>Query the collection "employee" and update the salary of the employee whose salary is greater than 70000 to 65000.</td>
+
+         <td>db.Employee.updateMany({"salary" : {$gt: "70000"}}, {$set:{'salary' : "65000"}})</td>
+           <td>There is No  employees, whose salary is greater than 70000, so this command will not modify any document inside Employee. </td>
+           <td><img src="./Question5.png" alt="OuputIMage"></td>
+        </tr>
+
+        <tr>
+            <td>Q.6</td>
+           <td>Delete all the documents from "employee" where last company is Y</td>
+
+         <td>db.Employee.deleteMany({"lastCompany":"Y"})</td>
+           <td>There is 6 employees in document , whose last company is "Y"  </td>
+           <td><img src="./Question6.png" alt="OuputIMage"></td>
+        </tr>
+
+        </tr>
+
+      </tbody>
+    </table>
+  </body>
+</html>
